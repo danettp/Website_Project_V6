@@ -18,6 +18,7 @@ class User(db.Model, UserMixin):
 # Post model representing the Post table in the database
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
     text = db.Column(db.Text, nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     author = db.Column(db.Integer, db.ForeignKey(
