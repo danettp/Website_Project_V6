@@ -33,11 +33,12 @@ def blog():
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
+        title = request.form.get('title')
 
         if not text:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(text=text, author=current_user.id)
+            post = Post(text=text, title=title, author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
