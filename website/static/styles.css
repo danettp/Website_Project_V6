@@ -16,6 +16,11 @@ html, body {
   margin: 16px; 
 }
 
+.post-title{
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 #navbar_logo {
   height: 60px; 
 }
